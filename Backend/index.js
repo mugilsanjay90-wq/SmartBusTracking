@@ -255,6 +255,11 @@ app.get("/getBuses", (req, res) => {
     .catch(err => res.status(500).json({ error: err.message }));
 });
 
+// Get College Info
+app.get("/collegeInfo", (req, res) => {
+  res.json(COLLEGE_LOCATION);
+});
+
 // Delete Driver
 app.delete("/deleteDriver/:id", (req, res) => {
   UserModel.findByIdAndDelete(req.params.id)
